@@ -1,15 +1,26 @@
-import Scanner from "@codeea/scanner";
+import ContaCorrente from "./classes/conta-corrente";
 
-console.log("Olá mundo");
+const conta = new ContaCorrente(
+  1234,
+  1,
+  "Gustavo",
+  "12345678911",
+  new Date("1989-03-21"),
+  new Date("2007/07/01")
+);
 
-const scanner = new Scanner();
+try {
+console.log("Saldo Inicial: ", conta.saldo)
+conta.setSaldo(100, "C");
+console.log("Saldo atual", conta.saldo);
 
-const text = scanner.question("Informe um texto");
-const floatNumber = scanner.questionFloat("Informe um número com decimal");
-const intNumber = scanner.question("Informe um número inteiro");
+conta.setSaldo(10, "D");
+console.log("Saldo atual", conta.saldo);
 
-console.log("Texto ", text);
-console.log("Número Decimal", floatNumber);
-console.log("Número Inteiro ", intNumber);
+conta.setSaldo(100, "D");
+console.log("Saldo atual", conta.saldo);
+} catch (error: any){
+  console.log(`Erro ao executar operação:  ${error.message}`);
+}
 
-scanner.close();
+console.log(conta);
