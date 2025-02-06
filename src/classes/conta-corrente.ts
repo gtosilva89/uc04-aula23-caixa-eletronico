@@ -31,7 +31,7 @@ export default class ContaCorrente {
   public get id() {
     return this._id;
   }
-
+  
   public get agencia() {
     return this._agencia;
   }
