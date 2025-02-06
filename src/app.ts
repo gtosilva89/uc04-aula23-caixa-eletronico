@@ -1,25 +1,25 @@
-import express, {Express, Response } from "express";
+import express, { Express, Response } from "express";
 
 class App {
   private readonly PORT = 3000;
   private _app: Express;
 
-  constructor(){
+  constructor() {
     this._app = express();
   }
 
-  public configure (){
-    // configura o app para receber e enviar o JSON
-    this._app.use(express.json())
+  public configure() {
+    // Configura o app para receber e enviar com JSON
+    this._app.use(express.json());
 
     // Rotas
     this._app.get("/health", (_, res: Response) => {
-      res.send({status:"OK"});
+      res.send({ status: "OK" });
     });
   }
 
-  public start (){
-    this._app.listen(this.PORT, (error) =>{
+  public start() {
+    this._app.listen(this.PORT, (error) => {
       if (error) {
         console.log(error);
       }

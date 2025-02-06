@@ -1,6 +1,6 @@
-import {app} from "./app"
+import { app } from "./app";
 
-(async ()=>{
+(async () => {
   app.configure();
   app.start();
 })();

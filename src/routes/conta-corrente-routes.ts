@@ -7,9 +7,9 @@ const contas: ContaCorrente[] = [
   new ContaCorrente(
     1234,
     1,
-    "Gustavo Silva",
+    "Cezar Augusto",
     "1234123421",
-    new Date("1989-03-21"),
+    new Date("1990-07-12"),
     new Date()
   ),
 ];
